@@ -18,7 +18,7 @@ public class ListNode {
         for(int i = start; i <= stop; i += step) {
             ListNode nxt = new ListNode(i);
             cur.next = nxt;
-            cur = nxt;
+            cur = cur.next;
         }
 
         return dummy.next;
@@ -30,6 +30,17 @@ public class ListNode {
 
     public static ListNode createNewLinkedList(int stop) {
         return createNewLinkedList(0, stop, 1);
+    }
+
+    public static ListNode fromArray(int[] array) {
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
+        for (int num : array) {
+            ListNode nxt = new ListNode(num);
+            cur.next = nxt;
+            cur = cur.next;
+        }
+        return dummy.next;
     }
 
     public static void printLinkedList(ListNode head) {
