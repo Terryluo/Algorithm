@@ -10,13 +10,17 @@ public class ReverseLinkedList {
     }
 
     public static void main(String[] args) {
-        ListNode head = ListNode.createNewLinkedList(10);
-        System.out.println("The previous Linked List is:");
-        ListNode.printLinkedList(head);
-        ReverseLinkedList rll = new ReverseLinkedList();
-        head = rll.reverse(head);
-        System.out.println("The new Linked List is:");
-        ListNode.printLinkedList(head);
+        try {
+            ListNode head = ListNode.linkedList(10);
+            System.out.println("The previous Linked List is:");
+            ListNode.printLinkedList(head);
+            ReverseLinkedList rll = new ReverseLinkedList();
+            head = rll.reverse(head);
+            System.out.println("The new Linked List is:");
+            ListNode.printLinkedList(head);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 

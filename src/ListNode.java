@@ -7,10 +7,9 @@ public class ListNode {
         this.next = null;
     }
 
-    public static ListNode createNewLinkedList(int start, int stop, int step) {
+    public static ListNode linkedList(int start, int stop, int step) throws Exception {
         if (start > stop) {
-            System.out.println("Start could not larger than stop");
-            return null;
+            throw new Exception("Start could not larger than stop");
         }
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
@@ -24,15 +23,16 @@ public class ListNode {
         return dummy.next;
     }
 
-    public static ListNode createNewLinkedList(int start, int stop) {
-        return createNewLinkedList(start, stop, 1);
+    public static ListNode linkedList(int start, int stop)throws Exception {
+        return linkedList(start, stop, 1);
     }
 
-    public static ListNode createNewLinkedList(int stop) {
-        return createNewLinkedList(0, stop, 1);
+    public static ListNode linkedList(int stop)throws Exception {
+        return linkedList(0, stop, 1);
     }
 
-    public static ListNode fromArray(int[] array) {
+    public static ListNode fromIntegerArray(int[] array) throws Exception {
+        if (array == null || array.length == 0) throw new Exception("Array cannot be null or Empty");
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
         for (int num : array) {

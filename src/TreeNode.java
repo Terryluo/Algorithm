@@ -10,10 +10,9 @@ public class TreeNode {
         this.key = key;
     }
 
-    public static TreeNode constructBinaryTree(int start, int stop, int step) {
+    public static TreeNode binaryTree(int start, int stop, int step) throws Exception {
         if (start > stop) {
-            System.out.println("Start could not larger than stop");
-            return null;
+            throw new Exception("Start could not larger than stop");
         }
         TreeNode root = new TreeNode(start);
         Queue<TreeNode> queue = new ArrayDeque();
@@ -38,12 +37,33 @@ public class TreeNode {
         return root;
     }
 
-    public static TreeNode constructBinaryTree(int stop) {
-        return constructBinaryTree(0, stop, 1);
+    public static TreeNode binaryTree(int stop) throws Exception {
+        return binaryTree(0, stop, 1);
     }
 
-    public static TreeNode constructBinaryTree(int start, int stop) {
-        return constructBinaryTree(start, stop, 1);
+    public static TreeNode binaryTree(int start, int stop) throws Exception {
+        return binaryTree(start, stop, 1);
+    }
+
+    public static TreeNode fromIntegerArray(int[] array) {
+        TreeNode root = new TreeNode(array[0]);
+        Queue<TreeNode> queue = new ArrayDeque();
+        queue.offer(root);
+        int i = 1;
+        while (i < array.length) {
+            TreeNode cur = (TreeNode)queue.poll();
+            if (i < array.length) {
+                cur.left = new TreeNode(i);
+                i++;
+                queue.offer(cur.left);
+            }
+            if (i < array.length) {
+                cur.right = new TreeNode(i);
+                i++;
+                queue.offer(cur.right);
+            }
+        }
+        return root;
     }
 
     public static void printPreOrder(TreeNode root) {

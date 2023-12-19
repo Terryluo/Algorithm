@@ -36,12 +36,16 @@ public class PartitionLinkedList {
     }
 
     public static void main(String[] args) {
-        ListNode head = ListNode.fromArray(new int[]{2, 4, 3, 5, 1});
-        System.out.println("The previous Linked List is:");
-        ListNode.printLinkedList(head);
-        PartitionLinkedList pll = new PartitionLinkedList();
-        head = pll.partition(head, 3);
-        System.out.println("The new Linked List is:");
-        ListNode.printLinkedList(head);
+        try {
+            ListNode head = ListNode.fromIntegerArray(new int[]{2, 4, 3, 5, 1});
+            System.out.println("The previous Linked List is:");
+            ListNode.printLinkedList(head);
+            PartitionLinkedList pll = new PartitionLinkedList();
+            head = pll.partition(head, 3);
+            System.out.println("The new Linked List is:");
+            ListNode.printLinkedList(head);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
