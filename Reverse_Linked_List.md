@@ -4,7 +4,7 @@ Reverse Linked List
 
 Reversing a linked list involves changing the direction of links between nodes, effectively flipping the list so that the tail becomes the new head and vice versa. Here's a simple algorithm to reverse a linked list:
 ```
-class ListNode:
+class util.ListNode:
     def __init__(self, value=0, next=None):
         self.value = value
         self.next = next
@@ -25,7 +25,7 @@ def reverse_linked_list_recursive(head):
 
 # Example usage:
 # Create a sample linked list: 1 -> 2 -> 3 -> 4 -> 5
-head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+head = util.ListNode(1, util.ListNode(2, util.ListNode(3, util.ListNode(4, util.ListNode(5)))))
 
 # Reverse the linked list using recursion
 new_head = reverse_linked_list_recursive(head)

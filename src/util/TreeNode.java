@@ -1,10 +1,12 @@
-import java.util.ArrayDeque;
-import java.util.Queue;
+package util;
+
+import java.util.*;
 
 public class TreeNode {
     public int key;
     public TreeNode left;
     public TreeNode right;
+    public TreeNode parent;
 
     public TreeNode(int key) {
         this.key = key;
@@ -45,25 +47,20 @@ public class TreeNode {
         return binaryTree(start, stop, 1);
     }
 
-    public static TreeNode fromIntegerArray(int[] array) {
-        TreeNode root = new TreeNode(array[0]);
-        Queue<TreeNode> queue = new ArrayDeque();
-        queue.offer(root);
-        int i = 1;
-        while (i < array.length) {
-            TreeNode cur = (TreeNode)queue.poll();
-            if (i < array.length) {
-                cur.left = new TreeNode(i);
-                i++;
-                queue.offer(cur.left);
-            }
-            if (i < array.length) {
-                cur.right = new TreeNode(i);
-                i++;
-                queue.offer(cur.right);
-            }
+    public static TreeNode fromArray(List<String> array) {
+        if (array.size() == 0) return null;
+        String cur = array.remove(0);
+        if (cur.equals("null")) {
+            return null;
         }
+        TreeNode root = new TreeNode(Integer.valueOf(cur));
+        root.left = fromArray(array);
+        root.right = fromArray(array);
         return root;
+    }
+
+    public static TreeNode reconstructTreeFromLevelOrder(List<String> array) {
+        return TreeNodeUtil.reconstructTreeFromLevelOrder(array);
     }
 
     public static void printPreOrder(TreeNode root) {

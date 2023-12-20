@@ -9,6 +9,8 @@ Reorder the given singly-linked list N1 -> N2 -> N3 -> N4 -> … -> Nn -> null t
         L = 1 -> 2 -> 3 -> null, is reordred to 1 -> 3 -> 2 -> null
 */
 
+import util.ListNode;
+
 public class ReOrderLinkedList {
     public ListNode reorder(ListNode head) {
         // step 1, get the first half linked list
@@ -47,7 +49,7 @@ public class ReOrderLinkedList {
 
     public static void main(String[] args) {
         try {
-            //ListNode head = ListNode.fromIntegerArray(new int[]{293,16,83,960,430,215,369,813,343,927,480,263,797,885,408,146,895,677,994,673,116,1015,330,714,954,910,339,822,903});
+            //util.ListNode head = util.ListNode.fromIntegerArray(new int[]{293,16,83,960,430,215,369,813,343,927,480,263,797,885,408,146,895,677,994,673,116,1015,330,714,954,910,339,822,903});
             ListNode head = ListNode.fromIntegerArray(new int[]{1,2,3});
             System.out.println("The previous Linked List is:");
             ListNode.printLinkedList(head);

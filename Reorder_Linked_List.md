@@ -16,7 +16,7 @@ One common task is to reorder the linked list in such a way that it alternates b
 then the second and second-to-last elements, and so on. 
 
 ```
-class ListNode:
+class util.ListNode:
     def __init__(self, value=0, next=None):
         self.value = value
         self.next = next
@@ -70,7 +70,7 @@ def merge_linked_lists(first, second):
 
 # Example usage:
 # Create a sample linked list: 1 -> 2 -> 3 -> 4 -> 5
-head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+head = util.ListNode(1, util.ListNode(2, util.ListNode(3, util.ListNode(4, util.ListNode(5)))))
 
 # Reorder the linked list
 reorder_linked_list(head)

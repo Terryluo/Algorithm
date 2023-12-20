@@ -1,3 +1,5 @@
+import util.ListNode;
+
 public class ReverseLinkedList {
     public ListNode reverse(ListNode head) {
         if (head == null || head.next == null) {

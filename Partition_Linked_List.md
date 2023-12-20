@@ -15,9 +15,9 @@ create two linked lists, one is for value smaller than target, one is for number
 put smaller linked list at first and concatenate the larger linked list, time complexity: `O(n)`
 
 ```
-public ListNode partition(ListNode head, int target) {
-  ListNode smallerDummy = new ListNode(0), smallerPointer = smallerDummy;
-  ListNode largerDummy = new ListNode(0), largerPointer = largerDummy;
+public util.ListNode partition(util.ListNode head, int target) {
+  util.ListNode smallerDummy = new util.ListNode(0), smallerPointer = smallerDummy;
+  util.ListNode largerDummy = new util.ListNode(0), largerPointer = largerDummy;
   while (head != null) {
       if (head.value < target) {
           smallerPointer.next = head;

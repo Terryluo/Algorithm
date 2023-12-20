@@ -11,6 +11,8 @@ The original relative order of the nodes in each of the two partitions should be
 */
 
 
+import util.ListNode;
+
 public class PartitionLinkedList {
     public ListNode partition(ListNode head, int target) {
         // create two linked lists, one is for value smaller than target, one is for number equals to /larger than target
