@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class TreeNodeUtil {
+    private static final String NULL_POINTER_EXPRESSION = "#";
     public static TreeNode reconstructTreeFromLevelOrder(List<String> array) {
         if (array.size() == 0) return null;
         TreeNode root = new TreeNode(Integer.valueOf(array.get(0)));
@@ -16,7 +17,7 @@ public class TreeNodeUtil {
                 if (cur != null) {
                     if (index < array.size()) {
                         String current = array.get(index);
-                        cur.left = !current.equals("null") ? new TreeNode(Integer.valueOf(current)) : null;
+                        cur.left = !NULL_POINTER_EXPRESSION.equals(current) ? new TreeNode(Integer.valueOf(current)) : null;
                         queue.add(cur.left);
                         index++;
                     } else {
@@ -24,7 +25,7 @@ public class TreeNodeUtil {
                     }
                     if (index < array.size()) {
                         String current = array.get(index);
-                        cur.right = !current.equals("null") ? new TreeNode(Integer.valueOf(current)) : null;
+                        cur.right = !NULL_POINTER_EXPRESSION.equals(current) ? new TreeNode(Integer.valueOf(current)) : null;
                         queue.add(cur.right);
                         index++;
                     } else {
@@ -32,6 +33,8 @@ public class TreeNodeUtil {
                     }
                 } else {
                     if (index < array.size()) {
+                        queue.add(null);
+                        queue.add(null);
                         index += 2;
                     }
                 }
