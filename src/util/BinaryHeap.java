@@ -1,5 +1,7 @@
 package util;
 
-public class BinaryHeap {
-    int[] heap;
+public interface BinaryHeap {
+    void offer(int num);
+    int peek();
+    int poll();
 }
